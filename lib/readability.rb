@@ -13,6 +13,7 @@ module Readability
       :weight_classes             => true,
       :clean_conditionally        => true,
       :remove_empty_nodes         => true,
+      :remove_link_nodes          => true,
       :min_image_width            => 130,
       :min_image_height           => 80,
       :ignore_image_format        => []
@@ -386,6 +387,12 @@ module Readability
         # remove <p> tags that have no text content - this will also remove p tags that contain only images.
         node.css("p").each do |elem|
           elem.remove if elem.content.strip.empty?
+        end
+      end
+
+      if @options[:remove_link_nodes]
+        node.css("a").each do |elem|
+          elem.remove
         end
       end
 
