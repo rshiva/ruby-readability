@@ -13,7 +13,7 @@ module Readability
       :weight_classes             => true,
       :clean_conditionally        => true,
       :remove_empty_nodes         => true,
-      :remove_link_nodes          => true,
+      :remove_link_nodes          => false,
       :min_image_width            => 130,
       :min_image_height           => 80,
       :ignore_image_format        => []
